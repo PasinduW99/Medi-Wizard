@@ -19,7 +19,6 @@ function App() {
 
     switch (currentQuestion) {
       case 'name':
-        // Check if input contains only greetings
         const greetingWords = ['hi', 'hello', 'hey', 'good morning', 'good afternoon', 'good evening'];
         const isOnlyGreeting = greetingWords.some(greeting => 
           userInput === greeting || 
@@ -33,31 +32,24 @@ function App() {
           return response;
         }
 
-        // Extract name by removing greetings and common phrases
         let extractedName = input.trim();
         
-        // Remove greetings from the beginning
         const greetingPattern = /^(hi|hello|hey|good morning|good afternoon|good evening)[,\s]*/i;
         extractedName = extractedName.replace(greetingPattern, '');
         
-        // Remove "I am" or "I'm" patterns
         const iAmPattern = /^(i am|i'm|my name is|this is|it's|its)\s+/i;
         extractedName = extractedName.replace(iAmPattern, '');
         
-        // Remove trailing greetings
         const trailingGreetingPattern = /[,\s]*(hi|hello|hey|good morning|good afternoon|good evening)$/i;
         extractedName = extractedName.replace(trailingGreetingPattern, '');
         
-        // Clean up extra spaces and punctuation
         extractedName = extractedName.replace(/[.,!?]+$/, '').trim();
         
-        // If after cleaning we have no name or it's too short, ask again
         if (!extractedName || extractedName.length < 2) {
           response = "Could you please tell me your name?";
           return response;
         }
         
-        // Capitalize first letter of each word for proper name formatting
         extractedName = extractedName.split(' ')
           .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
           .join(' ');
@@ -94,28 +86,23 @@ function App() {
   };
 
   const analyzeSymptoms = (symptoms: string): string => {
-    // Use the CSV-based symptom matcher
     const matchedSpecialist = SymptomMatcher.matchSymptoms(symptoms);
     
     if (matchedSpecialist) {
       return `Based on your symptoms, I recommend consulting a **${matchedSpecialist}**.\n\nThis recommendation is based on matching your symptoms with our medical database. The specialist(s) mentioned are best equipped to diagnose and treat your specific condition.`;
     } else {
-      // Fallback to general physician if no specific match found
       return `Based on your symptoms, I recommend starting with a **General Physician**. They can provide an initial assessment and refer you to a specialist if needed.\n\nIf your symptoms are severe or worsening, please seek immediate medical attention.`;
     }
   };
 
   const handleSymptomAnalysis = (symptomInput: string) => {
-    // Add current symptom to the list
     const updatedSymptoms = [...allSymptoms, symptomInput];
     setAllSymptoms(updatedSymptoms);
     
-    // Combine all symptoms for analysis
     const combinedSymptoms = updatedSymptoms.join('. ');
     
     let response = analyzeSymptoms(combinedSymptoms);
     
-    // Add simplified continuation options (only 2 options now)
     response += `\n\n**Important:** This is not a substitute for professional medical advice. Always consult with healthcare professionals for proper diagnosis and treatment.\n\nFor additional symptom information, you can visit:\nhttps://symptoms.webmd.com/\n\n**What would you like to do next?**\n• Tell me about **additional symptoms** you're experiencing\n• Type **'new'** to start a fresh consultation`;
     
     return response;
@@ -149,11 +136,9 @@ function App() {
 
       const userInput = input.toLowerCase();
 
-      // Handle new consultation request
       if (userInput.includes('new')) {
         response = startNewConsultation();
       }
-      // Handle greetings
       else if (userInput.includes('hi') || userInput.includes('hello')) {
         if (userInfo.name) {
           response = `Hello ${userInfo.name}! How can I help you today? You can tell me about additional symptoms or type 'new' to start a fresh consultation.`;
@@ -161,12 +146,10 @@ function App() {
           response = "Hello! Could you please tell me your name to get started?";
         }
       } 
-      // Handle symptoms (both initial and additional)
       else if (currentQuestion === 'symptoms' || currentQuestion === 'additional_symptoms') {
         response = handleSymptomAnalysis(input);
-        setCurrentQuestion('additional_symptoms'); // Allow for more symptoms
+        setCurrentQuestion('additional_symptoms');
       }
-      // Handle unrecognized input
       else {
         response = `I'm sorry, I didn't understand that. ${
           currentQuestion === 'name' ? "Could you please tell me your name?" :
@@ -180,7 +163,6 @@ function App() {
     }, 1000);
   };
 
-  // Medical Red Cross with Wizard Hat Component
   const MedicalCrossWithHat = ({ size = 32 }: { size?: number }) => (
     <div className="relative" style={{ width: size, height: size }}>
       {/* Red Cross */}
@@ -306,7 +288,7 @@ function App() {
             ))}
           </div>
 
-          {/* Input Interface */}
+
           <form onSubmit={handleSubmit} className="p-8 border-t border-green-200/30 bg-white/40 backdrop-blur-sm">
             <div className="flex gap-4">
               <input
@@ -333,7 +315,7 @@ function App() {
         </div>
       </main>
 
-      {/* Medical Disclaimer */}
+
       <div className="container mx-auto px-6 pb-6 max-w-4xl">
         <div className="bg-amber-50/80 border border-amber-200/50 rounded-2xl p-4 text-sm text-amber-800 backdrop-blur-sm">
           <div className="flex items-center gap-2 mb-2">

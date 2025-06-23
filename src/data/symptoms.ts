@@ -1,6 +1,5 @@
 import { SymptomEntry } from '../types';
 
-// CSV data converted to structured format with extracted keywords
 export const symptomDatabase: SymptomEntry[] = [
   {
     symptoms: "Frequent headaches and blurry vision",
