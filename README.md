@@ -1,48 +1,31 @@
-# Medi Wizard - AI Health Assistant
+# 🧙 Medi-Wizard: AI Health Assistant
 
-Medi Wizard is an AI-powered health assistant that helps users identify potential health issues based on their symptoms and recommends appropriate medical specialists.
+**Medi-Wizard** is an AI-powered health assistant that enables users to assess their symptoms through a friendly conversational interface and get intelligent recommendations for the appropriate medical specialist. It combines natural language interaction with structured medical logic — all in an offline, standalone package.
 
-## Features
+---
 
-- Interactive symptom assessment through a conversational interface
-- Structured questionnaire with general and symptom-specific questions
-- Doctor recommendation system based on symptom analysis
-- Simple and intuitive GUI with a friendly robotic doctor theme
-- Standalone executable that works without internet connection
+## ✨ Features
 
-## Installation
+- 🤖 **Conversational Symptom Checker**  
+  Chat-based interaction to collect user symptoms.
 
-### Option 1: Run from Source
+- 📋 **Dynamic Questionnaires**  
+  Structured questions customized to the user's input.
 
-1. Ensure you have Python 3.7+ installed
-2. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-3. Run the application:
-   ```
-   python medi_wizard.py
-   ```
+- 🧑‍⚕️ **Doctor Recommendation System**  
+  Suggests medical specialties based on symptom patterns.
 
-### Option 2: Build Executable
+- 🖥️ **Simple GUI**  
+  User-friendly interface styled with a robotic health assistant theme.
 
-1. Install cx_Freeze:
-   ```
-   pip install cx_Freeze
-   ```
-2. Build the executable:
-   ```
-   python setup.py build
-   ```
-3. The executable will be created in the `build` directory
+- 📦 **Offline & Standalone**  
+  Works without an internet connection after setup.
 
-## Usage
+---
 
-1. Launch the application
-2. Answer the questions about your symptoms
-3. Receive a recommendation for which type of doctor to see
-4. Type 'new' to start a new consultation
+## 🛠️ Tech Stack
 
-## Disclaimer
-
-Medi Wizard is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+- **Python** for backend logic
+- **Tkinter** (or similar) for GUI (as per source analysis)
+- **Tailwind CSS** (web assets)
+- **TypeScript** (support for optional frontend)
