@@ -1,27 +1,44 @@
-# 🧙 Medi-Wizard: AI Health Assistant
+# 🧙 Medi-Wizard: AI-Powered Health Assistant
 
-**Medi-Wizard** is an AI-powered health assistant that enables users to assess their symptoms through a friendly conversational interface and get intelligent recommendations for the appropriate medical specialist. It combines natural language interaction with structured medical logic.
+Medi-Wizard is an intelligent, conversational web app that helps users analyze their symptoms and receive suggestions for the appropriate type of medical specialist. Designed with a user-friendly interface and powered by structured medical logic, it bridges the gap between self-diagnosis and professional healthcare guidance.
 
 ---
 
-## ✨ Features
+## 🌟 Features
 
-- 🤖 **Conversational Symptom Checker**  
-  Chat-based interaction to collect user symptoms.
+- 🤖 **Chat-Based Symptom Checker**  
+  Engage in a conversational interface to input and discuss your symptoms.
 
-- 📋 **Dynamic Questionnaires**  
-  Structured questions customized to the user's input.
+- 📋 **Dynamic Questionnaire Flow**  
+  Adapts follow-up questions based on user responses for more accurate recommendations.
 
-- 🧑‍⚕️ **Doctor Recommendation System**  
-  Suggests medical specialties based on symptom patterns.
+- 🧑‍⚕️ **Doctor Recommendation Engine**  
+  Suggests the right medical specialty based on recognized symptom patterns.
 
-- 🖥️ **Simple GUI**  
-  User-friendly interface styled with a robotic health assistant theme.
+- 🖥️ **Clean and Intuitive UI**  
+  Built with Tailwind CSS and styled like a robotic health assistant for ease of use.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **React** for frontend
-- **Tailwind CSS** (web assets)
-- **TypeScript** (support for optional frontend)
+- **React** – UI Library for building the frontend  
+- **TypeScript** – Type safety and scalability  
+- **Tailwind CSS** – Utility-first styling  
+- **Vite** – Lightning-fast development build tool  
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+Clone the Repository
+
+```bash
+git clone https://github.com/your-username/Medi-Wizard.git
+cd Medi-Wizard
+npm install
+npm run dev
+```
+Visit http://localhost:5173 in your browser to view the app.
